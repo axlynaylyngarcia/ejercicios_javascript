@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<body>
+    <form name="formulario">
+    Digite su peso: <input type="text" name="peso">
+    Digite su altura: <input type="text" name="altura">
+    Diagnostico: <input type="text" size="80" name="resultado2" >
+    <input type="button" value="Calcular"  onclick="calcular()">
+    </form>
+    
+    <script type="text/Javascript">
+    function calcular() {
+        peso= parseInt(document.formulario.peso.value);
+        altura = parseInt(document.formulario.altura.value) / 100;
+
+        let IMC = peso / altura ** 2;
+        console.log(altura)
+        console.log(IMC)
+
+        if (IMC < 16 ){
+            resultado = "Criterio de ingreso en hospital."
+        }
+
+        else if (IMC ==16 || IMC < 17 ){
+            resultado = "Infrapeso"
+        }
+
+        else if (IMC == 17 || IMC < 18){
+            resultado = "Bajo peso"
+        }
+
+        else if (IMC == 18 || IMC < 25){
+            resultado = "Peso normal (saludable)"
+        }
+
+        else if (IMC == 25 || IMC < 30){
+            resultado = "Sobrepeso (obesidad de grado I)"
+        }
+
+        else if (IMC == 30 || IMC < 35 ){
+            resultado = " Sobrepeso crónico (obesidad de grado II)"
+        }
+
+        else if (IMC == 35 || IMC < 40){
+            resultado = "Obesidad premórbida (obesidad de grado III)"
+        }
+        else{
+            resultado = "Obesidad mórbida (obesidad de grado IV)"
+        }
+
+        document.formulario.resultado2.value = resultado
+    }
+    </script>
+
+</body>
+</html>

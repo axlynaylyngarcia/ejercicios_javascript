@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAICES</title>
+</head>
+<body>
+    <form name="formulario">
+    Digite el valor de a: <input type="text" name="a">
+    Digite el valor de b: <input type="text" name="b">
+    Digite el valor de c: <input type="text" name="c">
+    <br>
+    resultado: <input type="text" name="resultado" size="80">
+    <input type="button" value="Calcular" onclick="calcular()">
+    </form>
+
+    <script type="text/Javascript">
+    function calcular() {
+        a = parseInt(document.formulario.a.value);
+        b = parseInt(document.formulario.b.value);
+        c = parseInt(document.formulario.c.value);
+
+        let x1;
+        let x2;
+
+        if (((b^2) - 4*a*c) <0){
+            resultado = "Raices imaginarias o complejas";
+        }
+
+        else{
+            x1=(b- Math.sqrt(b^2 - (4*a*c)))/(2*a);
+            x2=(b+ Math.sqrt(b^2 - (4*a*c)))/(2*a);
+            resultado = "X1 = " + x1 + "Y X2 =" + x2 + " Dos Raices Reales Diferentes ";
+            if (x1 == x2){
+                resultado = "Dos raices reales iguales";
+            }
+        }
+        document.formulario.resultado.value = resultado;
+
+    }
+    </script>
+</body>
+</html>

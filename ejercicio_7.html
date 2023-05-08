@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMA 2 PRIMEROS = 3</title>
+</head>
+<body>
+    <form name="formulario">
+    Primer Número: <input type="text" name="va1">
+    Segundo Número: <input type="text" name="va2">
+    Tercer Número: <input type="text" name="va3">
+    <br>
+    <br>
+    resultado: <input type="text" name="resultado" size="50">
+    <input type="button" value="Revisar" onclick="consultar()">
+    </form>
+
+    <script type="text/Javascript">
+    function consultar(){
+        valor1= parseInt(document.formulario.va1.value);
+        valor2= parseInt(document.formulario.va2.value);
+        valor3= parseInt(document.formulario.va3.value);
+        let suma;
+
+        suma = valor1 + valor2;
+        if (suma === valor3){
+            resultado = " La suma de " + valor1 + " + " + valor2 +  " da " + valor3;
+            
+        }
+        else{
+            resultado = " La suma de " + valor1 +  " + " +  valor2 + " no da " + valor3;
+        }
+        document.formulario.resultado.value = resultado;
+    }
+
+
+    </script>
+</body>
+</html>

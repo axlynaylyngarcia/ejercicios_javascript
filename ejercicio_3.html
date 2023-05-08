@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GANACIA</title>
+</head>
+<body>
+    <form name="formulario">
+    Digite el valor del producto: <input type="text" name="precio_costo"  autocomplete="off">
+    Precio Venta: <input  type="text" name="resultado" ></input>
+    <input type="button" value="Calcular"  onclick="calcular()">
+
+    </form>
+
+    <script type="text/Javascript">     
+
+        function calcular(){
+            let ganancia; 
+            let precio_costo2 = parseInt(document.formulario.precio_costo.value);
+
+        if (precio_costo2 < 3000){
+            ganancia =  precio_costo2 * 0.15;
+        }
+        else if (precio_costo2 == 3000 && precio_costo <= 6000){
+            ganancia = 500;
+        }
+        else{
+            ganancia = precio_costo2 * 0.25;
+        }
+        let precio_final = (precio_costo2 + ganancia);
+
+        document.formulario.resultado.value = precio_final;
+    }
+    </script>
+</body>
+</html>

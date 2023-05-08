@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRESTAMO</title>
+</head>
+<body>
+    <form name="formulario">
+    Digite sus ingresos: <input type="text" name="ingresos">
+    Tiene deudas(1:SI, 2:NO): <input type="text" name="deudas">
+    <input type="button" value="Evaluar" onclick="prestamo()">
+    <br>
+    Resultado: <input type="text" name="resultado2" size="80" autocomplete="off">
+    </form>
+
+    <script type="text/Javascript">
+        function prestamo() {
+        deuda = parseInt(document.formulario.deudas.value);
+        ingreso = parseInt(document.formulario.ingresos.value);
+
+        if ( ingreso < 945200 && deuda == 1 ){
+            resultado = "No puede hacer el prestamo, sus ingresos son menores a $945200 y tiene deudas";
+        }
+        else if (ingreso >= 945200 && deuda == 2 ){
+            resultado = "Puede hacer el prestamo, sus ingresos son mayores a $945200 y no tiene deudas";
+        }
+        else if (ingreso >= 945200 && deuda == 1 ){
+            resultado = "No Puede hacer el prestamo, tiene deudas ";
+        }
+        else{
+            resultado = "No puede hacer el prestamo, sus ingresos son menores a  $945200 "
+        }
+
+
+        document.formulario.resultado2.value = resultado;
+    }
+
+    </script>
+</body>
+</html>
